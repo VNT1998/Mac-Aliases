@@ -1,0 +1,54 @@
+#==== System =====
+loggedInUser=$(stat -f%Su /dev/console)
+alias sysclean="sudo rm -rf Library/Developer/Xcode/iOS\ DeviceSupport/ && sudo rm -rf Library/Logs/ && sudo rm -rf Library/Caches/ && sudo rm -rf Library/Developer/Xcode/DerivedData && echo CleanupCompleted"
+
+
+#==== Flutter =====
+alias fd="flutter doctor"
+alias fpg="flutter pub get"
+alias fc="flutter clean"
+alias fpcr="flutter pub cache repair"
+
+
+#==== Expo =====
+alias es="expo start"
+
+
+#==== React Native =====
+alias nrns="npx react-native start"
+alias nrnri="npx react-native run-ios --simulator='iPhone 14 Pro Max'"
+alias nrnra="npx react-native run-android"
+
+
+#==== Node =====
+alias ni="npm install"
+alias ns="npm start"
+alias nrd="npm run dev"
+alias nilpd="npm install --legacy-peer-deps"
+alias nlr="nvm ls-remote"
+alias nl="nvm ls"
+alias nc="rm -rf node_modules && rm package-lock.json"
+
+#==== IOS =========
+alias pi="cd ios && pod install && cd .."
+alias pru="pod repo update"
+alias pc="cd ios && rm -r -f .symlinks Podfile.lock Pods && cd .."
+
+
+#===== FVM =====
+alias ffd="fvm flutter doctor"
+alias ffpg="fvm flutter pub get"
+alias ffc="fvm flutter clean"
+alias ffpcr="fvm flutter pub cache repair"
+
+export PATH=$JAVA_HOME/bin:$PATH
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
